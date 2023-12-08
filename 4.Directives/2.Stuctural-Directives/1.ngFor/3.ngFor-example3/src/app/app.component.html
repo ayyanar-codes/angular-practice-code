@@ -1,0 +1,28 @@
+<h1>App component: {{title}}</h1>
+
+<h2></h2>
+
+<div class="panel-body">
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <th>#</th><th>Title</th><th>Director</th><th>Cast</th>
+      </thead>
+
+      <tbody>
+        <tr [ngClass]='{"bgsuccess":e}' *ngFor="let movie of movies; let i=index; let e=even; let o=odd; let f=first; let l=last;">
+          <td>{{i+1}}</td>
+          <td>{{movie.title}}</td>
+          <td>{{movie.director}}</td>
+          <td>{{movie.cast}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+
+
