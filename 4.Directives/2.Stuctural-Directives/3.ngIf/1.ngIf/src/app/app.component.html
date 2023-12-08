@@ -1,0 +1,19 @@
+<h1>ngIf example</h1>
+<div class="row">
+  <label for="">Checkbox: (value: {{showMe}})
+    <input type="checkbox" [(ngModel)]="showMe">
+  </label>
+</div>
+
+<div *ngIf="showMe">
+  <p>Checkbox is checked</p>
+</div>
+
+<div *ngIf="!showMe">
+  <p>Checkbox is not checked</p>
+</div>
+
+
+
+
+
