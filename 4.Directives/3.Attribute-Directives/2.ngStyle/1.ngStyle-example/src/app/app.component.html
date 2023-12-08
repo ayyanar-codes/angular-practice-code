@@ -1,0 +1,9 @@
+<h1>ngStyle-example</h1>
+
+
+
+<label [ngStyle]="{'color':'myColor'}" >Sample text</label>
+<br>
+<input type="checkbox" [(ngModel)]="isValidData">
+<br>
+<label [ngStyle]="{'color':isValidData?'green':'red'}" >Sample text</label>

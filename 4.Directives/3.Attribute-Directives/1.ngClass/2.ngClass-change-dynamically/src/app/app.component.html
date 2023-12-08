@@ -1,0 +1,8 @@
+<h1>ngClass-example</h1>
+
+<label for="bigFont">bigFont : <input id="bigFont" type="checkbox" [(ngModel)]='enableBigFont'></label>
+<label for="bigFont">redColor : <input id="redColor" type="checkbox" [(ngModel)]='enableRedColor'></label>
+<label for="bigFont">italics : <input id="italics" type="checkbox" [(ngModel)]='enableItalics'></label>
+
+<br>
+<label [ngClass]="{'bigFont':enableBigFont, 'redColor':enableRedColor, 'italics':enableItalics}">Sample text</label>
