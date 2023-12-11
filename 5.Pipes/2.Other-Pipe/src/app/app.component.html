@@ -1,0 +1,32 @@
+<h1>Angular pipes </h1>
+
+<h2>Original string: {{message}}</h2>
+
+<h2>uppercase string: {{message|uppercase}}</h2>
+
+<h2>lowercase  string: {{message|lowercase }}</h2>
+
+<br>
+<!--Currency-->
+<h2>original currency: {{currency}}</h2>
+
+<br>
+<h2>USD currency with symbol: {{currency|currency:'USD'}}</h2>
+<h2>USD currency with name: {{currency|currency:'USD':'code'}}</h2>
+<br>
+<h2>Indian currency with symbol: {{currency|currency:'INR'}}</h2>
+<h2>Indian currency with name: {{currency|currency:'INR':'code'}}</h2>
+<br>
+<h2>CAD currency: {{currency|currency:'CAD'}}</h2>
+<h2>original currency: {{currency|currency:'CAD':'code'}}</h2>
+
+
+<!--Decimal pipe-->
+<h2>original Value: {{sampleNumber}}</h2>
+<h2>number: '1.0-0' Value: {{sampleNumber|number: '1.0-0'}}</h2>
+
+
+
+
+
+
