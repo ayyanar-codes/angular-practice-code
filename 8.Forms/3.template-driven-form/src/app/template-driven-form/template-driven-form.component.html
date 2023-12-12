@@ -1,0 +1,110 @@
+
+<h2>Template driven form</h2>
+
+<div class="row">
+
+<div class="col-md-6">
+    <form class="container" #contactForm="ngForm" (submit)="fnSubmit(contactForm)">
+        <div class="row">
+            <div class="col-md-4">
+                <label for="firstName" class="form-label">First Name</label>
+            </div>
+            <div class="col-md-8">
+                <input type="text" class="form-control" name="firstname" id="firstName" [(ngModel)]="contact.firstName">
+            </div>
+        </div>
+
+        <div class="row elems">
+            <div class="col-md-4">
+                <label for="lastName" class="form-label">Last Name</label>
+            </div>
+            <div class="col-md-8">
+                <input type="text" class="form-control" name="lastname" id="lastName" [(ngModel)]="contact.lastName">
+            </div>
+        </div>
+
+        <div class="row elems">
+            <div class="col-md-4">
+                <label for="email" class="form-label">Email</label>
+            </div>
+            <div class="col-md-8">
+                <input type="text" class="form-control" name="email" id="email" [(ngModel)]="contact.email">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <label for="gender" class="form-label">Gender</label>
+            </div>
+            <div class="col-md-8">
+                <label for="male" class="form-label cbxElems"><input type="radio" class="" name="gender" id="male" [(ngModel)]="contact.gender">Male</label>
+                <label for="female" class="form-label cbxElems"><input type="radio" class="" name="gender" id="female" [(ngModel)]="contact.gender">Female</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <label for="isMarried" class="form-label">Married</label>
+            </div>
+            <div class="col-md-8">
+                <input type="checkbox" class="" name="isMarried" id="isMarried" [(ngModel)]="contact.married">
+            </div>
+           
+            
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <label for="country" class="form-label">Country</label>
+            </div>
+            <div class="col-md-8">
+                <select name="country" id="country" class="form-control" [(ngModel)]="contact.country">
+                    <option value="0">Select</option>
+                    <option [ngValue]="country.id" *ngFor="let country of countryList" >{{country.name}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div ngModelgroup="Address">
+            <div class="row elems">
+                <div class="col-md-4">
+                    <label for="street" class="form-label">Street</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" name="street" id="street" [(ngModel)]="contact.address.street">
+                </div>
+            </div>
+            <div class="row elems">
+                <div class="col-md-4">
+                    <label for="city" class="form-label">City</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" name="city" id="city" [(ngModel)]="contact.address.city">
+                </div>
+            </div>
+            <div class="row elems">
+                <div class="col-md-4">
+                    <label for="pinCode" class="form-label">Pin Code</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" name="pinCode" id="pinCode" [(ngModel)]="contact.address.pinCode">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                
+            </div>
+            <div class="col-md-8">
+                <button type="submit" class="btn btn-success btn-sm">Submit</button>
+            </div>
+            
+        </div>
+    </form>
+</div>
+
+</div>
+
+
+
