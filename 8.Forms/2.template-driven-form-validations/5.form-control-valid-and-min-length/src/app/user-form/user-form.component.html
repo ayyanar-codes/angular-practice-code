@@ -1,0 +1,75 @@
+
+
+<div class="row">
+    <form  #userForm="ngForm" (submit)="fnSubmit(userForm)" class="col-md-6" ngNativeValidate>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="">First Name</label>
+            </div>
+            <div class="col-md-8">
+                <input #firstName="ngModel" type="text" name="firstname" id="firstname" class="form-control" [(ngModel)]="user.firstName" required minlength="10" maxlength="15" pattern="^[a-zA-Z]+$">
+                <span *ngIf="firstName.touched && firstName.dirty">
+                    <span *ngIf="firstName.errors?.['minlength']" class="text-danger" >
+                        Minimum length is 10 characters
+                    </span>
+                    <span style="display: block;" *ngIf="firstName.errors?.['maxlength']" class="text-danger" >
+                        Maximum length is 15 characters
+                    </span>
+                    <span style="display: block;" *ngIf="firstName.errors?.['required']" class="text-danger" >
+                        Please enter First Name
+                    </span>
+                    <span style="display: block;" *ngIf="firstName.errors?.['pattern']" class="text-danger" >
+                        Characters only allowed
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="">Last Name</label>
+            </div>
+            <div class="col-md-8">
+                <input type="text" name="lastname" id="lastname" class="form-control"  [(ngModel)]="user.lastName">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="">email</label>
+            </div>
+            <div class="col-md-8">
+                <input type="text" name="email" id="email" class="form-control" [(ngModel)]="user.email">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="">Gender</label>
+            </div>
+            <div class="col-md-8">
+                <label for="male">Male<input type="radio" name="gender" id="male" [(ngModel)]="user.gender"></label>
+                <label for="female">Female<input type="radio" name="gender" id="female" [(ngModel)]="user.gender"></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="isMarried">Marrital Status</label>
+            </div>
+            <div class="col-md-8">
+                <input type="checkbox" name="isMarried" id="isMarried" [(ngModel)]="user.isMarried">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                
+            </div>
+            <div class="col-md-8">
+                <button type="submit" class="btn btn-primary btn-sm" [disabled]="!userForm.valid">Submit</button>
+            </div>
+        </div>
+        
+    </form>
+</div>
+
+
+
+
+
