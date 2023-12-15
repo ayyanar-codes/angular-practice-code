@@ -1,0 +1,116 @@
+
+<h2>reactive form</h2>
+
+<div class="row">
+
+<div class="col-md-6">
+    <form action="" [formGroup]="contactForm" (submit)="fnSubmit()">
+        <div class="row">
+            <div class="col-md-4">
+                <label for="firstname">First name</label>
+            </div>
+            <div class="col-md-8">
+                <input type="text" name="firstname" class="form-control" formControlName="firstName">
+                <span *ngIf="(fFirstName?.touched || fFirstName?.dirty)">
+                    <span class="text-danger" *ngIf="fFirstName?.errors?.['required']">
+                        First Name is required
+                    </span>
+                    <span class="text-danger" *ngIf="fFirstName?.errors?.['minLength']">
+                        Minimum 10 characters required
+                    </span>
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <label for="lastname">Last name</label>
+            </div>
+            <div class="col-md-8">
+                <input type="text" name="lastname" class="form-control" formControlName="lastName">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <label for="email">Email</label>
+            </div>
+            <div class="col-md-8">
+                <input type="text" name="email" class="form-control" formControlName="email">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <label for="gender">Gender</label>
+            </div>
+            <div class="col-md-8">
+                <label for="male">Male <input type="radio" name="gender" id="male" formControlName="gender"></label>
+                <label for="female">Female <input type="radio" name="gender" id="female"  formControlName="gender"></label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <label for="married">Marrital Status</label>
+            </div>
+            <div class="col-md-8">
+                <input type="checkbox" name="married" formControlName="isMarried">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <label for="country">Country</label>
+            </div>
+            <div class="col-md-8">
+                <select name="country" class="form-control" formControlName="country">
+                    <option value="0" >Select</option>
+                    <option [ngValue]="country.id" *ngFor="let country of countryList">{{country.name}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="address" formGroupName="address">
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="street">Street</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" name="street" class="form-control" formControlName="street">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="City">City</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" name="City" class="form-control" formControlName="city">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="pinCode">Pin Code</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" name="pinCode" class="form-control" formControlName="pinCode">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                
+            </div>
+            <div class="col-md-8">
+                <button type="submit" class="btn btn-primary" [disabled]="!contactForm.valid" >Submit</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+</div>
+
+
+

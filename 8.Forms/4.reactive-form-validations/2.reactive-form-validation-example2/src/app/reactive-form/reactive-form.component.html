@@ -1,0 +1,66 @@
+
+<div class="container">
+    <form action="" [formGroup]="myFormGroup" (submit)="fnSubmit()">
+        <div class="row">
+            <div class="col-md-4">
+                <label for="firstname">First Name</label>
+            </div>
+            <div class="col-md-8">
+                <input type="text" name="firstname" id="firstname" class="form-control" formControlName="firstName">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="lastname">Last Name</label>
+            </div>
+            <div class="col-md-8">
+                <input type="text" name="lastname" id="lastname" class="form-control" formControlName="lastName">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="email">Email</label>
+            </div>
+            <div class="col-md-8">
+                <input type="text" name="email" id="email" class="form-control" formControlName="email">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="gender">Gender</label>
+            </div>
+            <div class="col-md-8">
+                <label for="male">Male<input type="radio" name="gender" id="male" formControlName="gender"></label>
+                <label for="female">Female<input type="radio" name="gender" id="female" formControlName="gender"></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="gender">Is Married</label>
+            </div>
+            <div class="col-md-8">
+                <input type="checkbox" name="ismarried" id="ismarried" formControlName="isMarried">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="country">Country</label>
+            </div>
+            <div class="col-md-8">
+                <select name="" id="" formControlName="country">
+                    <option value="0">Select</option>
+                    <option [ngValue]="country.id" *ngFor="let country of countryList">{{country.name}}</option>
+                </select>
+            </div>  
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+               
+            </div>
+            <div class="col-md-8">
+                <button type="submit" class="btn btn-warning btn-sm" [disabled]="!myFormGroup.valid">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
