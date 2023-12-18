@@ -1,0 +1,30 @@
+
+<!--This is also working-->
+<!-- <a [routerLink]="['']">Home</a> | 
+<a [routerLink]="['about']">About</a> | 
+<a [routerLink]="['contact-us']">Contact-us</a>  -->
+
+<!--Another technique-->
+<!-- <a routerLink='/home'>Home</a> | 
+<a routerLink='/about'>About</a> | 
+<a routerLink='/contact-us'>Contact-us</a>  -->
+
+<!-- <router-outlet></router-outlet> -->
+
+
+<label for="age">
+    <input type="text" name="name" id="name" [(ngModel)]="name">
+</label>
+<button (click)="fnCheckName()">Check</button>
+<br><br>
+
+<button (click)="fnGoToAbout()" >Go to About page</button>
+<button (click)="fnGoToContactUs()" >Go to Contact us page</button>
+
+<p>------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+</p>
+
+<router-outlet></router-outlet>
+
