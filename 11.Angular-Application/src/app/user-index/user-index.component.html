@@ -1,0 +1,41 @@
+
+
+
+    
+<div class="container">
+    
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Users</h2> 
+        </div>
+        <div class="col-md-6">
+            <button style="float: right;" (click)="fnAddNew()">Add New</button>
+        </div>
+    </div>
+    <table class="table table-hover table-stripe">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>User Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Website</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{user.name}}</td>
+          <td>{{user.username}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.phone}}</td>
+          <td>{{user.website}}</td>
+          <td>
+            <button class="btn btn-info btn-sm" (click)="fnEdit(user.id)">Edit</button>
+            <button class="btn btn-info btn-sm" (click)="fnDetail(user.id)">Detail</button>
+            <button class="btn btn-info btn-sm" (click)="fnDelete(user.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
