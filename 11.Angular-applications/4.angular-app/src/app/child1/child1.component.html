@@ -1,0 +1,20 @@
+<!-- <p>child1 works!</p>
+{{name}}
+<br><br>
+<label>Please enter your name:</label>
+<br><br>
+<input type="text" [ngModel]="enteredName" (ngModelChange)="onNameChange($event)"> <br><br>
+{{enteredName}}
+<br><br>
+<h2>Entered value is {{displayValue}}</h2> -->
+
+
+<p>child1 works!</p>
+{{name}}<br><br>
+<label>Please enter your name:</label>
+<br><br>
+<input type="text" [ngModel]="name" (ngModelChange)="fnOnNameChange($event)"> <br><br>
+<br><br>
+<h2>Entered value is <span style="color: red;">{{enteredName}}</span></h2>
+
+<h2>Parent Name is: {{parentName}}</h2>

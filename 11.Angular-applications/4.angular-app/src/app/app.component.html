@@ -1,0 +1,12 @@
+<h2>Welcome to Ayyanar application</h2>
+
+<label>Please enter the parent name:</label> <br><br>
+<input type="text" [(ngModel)]="Name">
+
+
+<h2>Child Name is {{childName}}</h2>
+
+<hr>
+
+<app-child1 [parentName]="Name" (onNameChange)="fnOnChildNameChange($event)"></app-child1>
+
