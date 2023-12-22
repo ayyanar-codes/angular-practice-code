@@ -1,0 +1,80 @@
+<h2>App:</h2>
+<button (click)="fnRedirectToFirstChild()" class="btn btn-primary btn-sm">Go to Child 1</button> &nbsp;
+<button (click)="fnRedirectToSecondChild()" class="btn btn-primary btn-sm">Go to Child 2</button>
+<br><br>
+<div class="row">
+  <div class="col-md-4">
+    <div class="container">
+      
+      <form [formGroup]="userForm" (submit)="fnFormChange()">
+        <div class="row form-group">
+          <div class="col-md-4">
+            <label>First Name</label>
+          </div>
+          <div class="col-md-8">
+            <input type="text" class="form-control" formControlName="firstName">
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-md-4">
+            <label>Last Name</label>
+          </div>
+          <div class="col-md-8">
+            <input type="text" class="form-control" formControlName="lastName">
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-md-4">
+            <label>Email</label>
+          </div>
+          <div class="col-md-8">
+            <input type="text" class="form-control" formControlName="email">
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-md-4">
+            <label>City</label>
+          </div>
+          <div class="col-md-8">
+            <input type="text" class="form-control" formControlName="city">
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-md-4">
+            <label>State</label>
+          </div>
+          <div class="col-md-8">
+            <input type="text" class="form-control" formControlName="state">
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-md-4">
+            <label>Country</label>
+          </div>
+          <div class="col-md-8">
+            <input type="text" class="form-control" formControlName="country">
+          </div>
+        </div>
+
+        --
+
+        <div class="row form-group">
+          <div class="col-md-4"></div>
+          <div class="col-md-8">
+            <button type="submit" class="btn btn-success btn-sm" [disabled]="!userForm.valid">Save</button> &nbsp;
+            <button type="reset" class="btn btn-danger btn-sm" [disabled]="!userForm.valid">Clear</button>
+          </div>
+        </div>
+
+      </form>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<hr>
+
+<router-outlet></router-outlet>
+
