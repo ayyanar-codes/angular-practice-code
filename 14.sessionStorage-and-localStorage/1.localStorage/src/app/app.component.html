@@ -1,0 +1,26 @@
+<h1>App</h1>
+
+<label>Name</label>
+<input type="text" [(ngModel)]="name" >
+<br><br>
+
+<label>Age</label>
+<input type="number" [(ngModel)]="age" >
+<br><br>
+
+<label>Email</label>
+<input type="text" [(ngModel)]="email" >
+<br><br>
+
+<label>City</label>
+<input type="text" [(ngModel)]="city" >
+<br><br>
+
+<label>Country</label>
+<input type="text" [(ngModel)]="country" >
+<br><br>
+
+<button (click)="fnSave()">Save</button>
+
+<p>{{name}},{{age}},{{email}},{{city}},{{country}}</p>
+
